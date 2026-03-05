@@ -32,7 +32,7 @@ function App() {
         />
       </div>
 
-      <div style={{ maxWidth: '800px', margin: '0 auto', fontFamily: 'Arial' }}>
+      <div style={{ margin: '0 auto', fontFamily: 'Arial', alignItems: 'center', padding: '20px' }}>
         <h1>Project Dashboard</h1>
         <Filters 
           currentDay={day} 
