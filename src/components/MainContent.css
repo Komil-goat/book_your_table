@@ -1,0 +1,7 @@
+.room {
+    background-image: url('../images/room-plan.png');
+    height: 80vh;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
