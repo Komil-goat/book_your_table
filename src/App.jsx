@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Filters from './components/Filters.jsx';
 import MainContent from './components/MainContent.jsx';
 import Auth from "./components/Auth.jsx";
+import "./components/Modal.css";
 
 function App() {
   const [day, setDay] = useState(new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' }));
