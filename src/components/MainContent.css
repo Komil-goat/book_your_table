@@ -1,6 +1,6 @@
 .room {
     background-image: url('../images/room-plan.png');
-    background-size: contain;     /* Scales the image to fit inside the div */
+    background-size: contain;    
     background-position: center;
     background-repeat: no-repeat;
     height: 80vh;

@@ -4,7 +4,6 @@
   color: white;
   padding: 15px 15px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   font-family: Arial, sans-serif;
@@ -15,31 +14,56 @@
   margin: 0;
 }
 
-.nav-buttons {
+.nav-right {
   display: flex;
   gap: 10px;
+  margin-left: auto;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px; 
 }
 
-.nav-buttons button {
+.nav-right button {
   padding: 8px 14px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  transition: background-color 0.2s ease;
-}
-
-.nav-buttons button:hover {
-  opacity: 0.8;
-}
-
-.nav-buttons button:nth-child(1) {
-  background-color: #4caf50;
   color: white;
 }
 
-.nav-buttons button:nth-child(2) {
-  background-color: #2196f3;
+.nav-left button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #5b90a6; 
+  color: white;
+  transition: opacity 0.2s;
+}
+
+.nav-right button:hover {
+  opacity: 0.8;
+}
+
+.nav-left button:hover {
+  opacity: 0.8;
+}
+
+.nav-left button:nth-child(1) {
+  background-color: #5b90a6;
+  color: white;
+}
+
+.nav-right button:nth-child(1) {
+  background-color: #a2ac0d;
+  color: white;
+}
+
+.nav-right button:nth-child(2) {
+  background-color: #c323a5;
   color: white;
 }
 
