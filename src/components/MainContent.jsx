@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import RoomLayout from './RoomLayout';
+import TablePopupHandler from './TablePopupHandler.jsx';
 import TABLES from '../data/tables.json';
 import './MainContent.css';
+import './BookingPopup.css';
 
 function MainContent(props) {
   const initializeBookings = () => {
@@ -18,11 +20,6 @@ function MainContent(props) {
   };
 
   const [bookings, setBookings] = useState(initializeBookings());
-  const [selectedTable, setSelectedTable] = useState(null);
-
-  const handleTableClick = (tableId, tableInfo) => {
-    setSelectedTable({ id: tableId, info: tableInfo });
-  };
 
   return (
     <div style={{ marginTop: '30px', padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
@@ -31,12 +28,23 @@ function MainContent(props) {
 
       <div className="room">
         <img src="src/images/room-plan.png" alt="" />
-        <RoomLayout
+        
+        <TablePopupHandler
           day={props.day}
           time={props.time}
           bookings={bookings}
-          onTableClick={handleTableClick}
-        />
+          setBookings={setBookings}
+        >
+          {({ handleTableClick, clickedTableId }) => (
+            <RoomLayout
+              day={props.day}
+              time={props.time}
+              bookings={bookings}
+              onTableClick={handleTableClick}
+              clickedTableId={clickedTableId}
+            />
+          )}
+        </TablePopupHandler>
       </div>
     </div>
   );
