@@ -14,7 +14,7 @@
 
 .tables-overlay {
     position: absolute;
-    inset: 0; /* x=0; y=0 */
+    inset: 0;
 }
 
 .table {
@@ -24,10 +24,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(10px, 1.2vw, 16px); /* responsive typography (min, preferred, max) */
+    font-size: clamp(10px, 1.2vw, 16px);
     font-weight: bold;
     user-select: none;
-    transition: all 0.2s ease; /* changes smoothly over 0.2s */
+    transition: all 0.2s ease;
     border: none;
     transform: translate(-50%, -50%);
 }

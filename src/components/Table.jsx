@@ -1,6 +1,5 @@
 import React from 'react';
 
-//defining <Table /> explicitly (as a tag)
 function Table({ tableId, tableInfo, state, onTableClick }) {
     const { position, size, number, image } = tableInfo;
 
