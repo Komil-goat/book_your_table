@@ -1,5 +1,5 @@
 import React from "react";  
-import bigTableImg from '../images/big-table.png';
+import bigTableImg from '../images/big-table-occupied.png';
 
 function Prices() {
     return (

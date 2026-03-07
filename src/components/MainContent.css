@@ -1,10 +1,43 @@
 .room {
-    background-image: url('../images/room-plan.png');
-    background-size: contain;    
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 80vh;
-    padding: 15px;
     border-radius: 5px;
     border: 1px solid #eee;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.room img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.tables-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.table {
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(10px, 1.2vw, 16px);
+    font-weight: bold;
+    user-select: none;
+    transition: all 0.2s ease;
+    border: none;
+    transform: translate(-50%, -50%);
+}
+
+.table img {
+    object-fit: cover;
+    display: block;
+}
+
+.table-number {
+    position: absolute;
+    align-items: center;
 }
