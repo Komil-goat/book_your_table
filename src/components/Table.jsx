@@ -1,13 +1,15 @@
 import React from 'react';
 
-//defining <Table /> explicitly (as a unit)
+//defining <Table /> explicitly (as a tag)
 function Table({ tableId, tableInfo, state, onTableClick }) {
-    const { position, number } = tableInfo;
+    const { position, size, number, image } = tableInfo;
 
     const tableStyle = {
         position: 'absolute',
         left: `${position.x}%`,
         top: `${position.y}%`,
+        width: `${size.width}%`,
+        height: `${size.height}%`,
         transform: 'translate(-50%, -50%)',
     };
 
@@ -24,7 +26,10 @@ function Table({ tableId, tableInfo, state, onTableClick }) {
             onClick={handleClick}
             title={`Table ${number} - ${state}`}
         >
-            {number}
+            <img src={`src/images/${image}-${state}.png`}
+                alt={`Table ${number}`}
+            />
+            <span className="table-number">{number}</span>
         </div>
     );
 }

@@ -41,7 +41,7 @@ function RoomLayout({ day, time, bookings, onTableClick }) {
      */
 
     return (
-        <div className="room">
+        <div className="tables-overlay">
             {Object.entries(TABLES).map(([tableId, tableInfo]) => (
                 //initializing tables one by one
                 <Table
@@ -83,6 +83,6 @@ export default RoomLayout;
         * Step 3: bookings["2026-03-05_morning"] = { "table_1": "available", "table_2": "booked" }
         * Step 4: state for table_1 = "available"
         * Step 5: Table component receives state="available"
-        * Step 6: CSS class becomes "table-available" (green color)
+        * Step 6: Image becomes "table-available" (blue color)
         * 
 */
