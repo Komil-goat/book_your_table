@@ -1,3 +1,4 @@
+import { Link } from "react-router"; 
 import React, { useState } from "react";
 import ConfirmationModal from "./ConfirmationModal.jsx";
 
@@ -15,8 +16,8 @@ function Navbar({ openLogin, openSignup, currentUser, setCurrentUser }) {
     <nav className="navbar">
       <div className="nav-left">
         <h1>Cafe Booking</h1>
-        <button onClick={() => window.scrollTo(0, 0)}>Home</button>
-        <button>Prices</button>
+        <Link to="/"><button>Home</button></Link>
+        <Link to="/prices"><button>Prices</button></Link>
       </div>
 
       <div className="nav-right">
