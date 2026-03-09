@@ -20,6 +20,13 @@
 
 .modal-window h2 {
   margin-bottom: 20px;
+  color: black;
+}
+
+.modal-window p {
+  color: black;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .modal-form {

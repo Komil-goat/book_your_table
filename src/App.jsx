@@ -22,7 +22,12 @@ function App() {
   return (
     <>
       <div>
-        <Navbar openLogin={openLogin} openSignup={openSignup} />
+        <Navbar
+          openLogin={openLogin}
+          openSignup={openSignup}
+          currentUser={currentUser}
+          setCurrentUser={setCurrentUser}
+        />
 
         <Auth
           show={auth !== null}
