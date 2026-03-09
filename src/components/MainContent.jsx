@@ -34,6 +34,8 @@ function MainContent(props) {
           time={props.time}
           bookings={bookings}
           setBookings={setBookings}
+          currentUser={props.currentUser}
+          onRequireLogin={props.openLogin}
         >
           {({ handleTableClick, clickedTableId }) => (
             <RoomLayout

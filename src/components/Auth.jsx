@@ -25,7 +25,7 @@ function Auth({ show, mode, onClose, users, setUsers, setCurrentUser }) {
         setCurrentUser(user);
         onClose();
       } else {
-        alert("User not found");
+        alert("User not found. You have to sign up.");
       }
     } else {
       const exists = users.some(

@@ -39,7 +39,7 @@ function App() {
         />
       </div>
 
-
+      
       <main>
         <Routes>
           <Route path="/" element={
@@ -51,7 +51,12 @@ function App() {
                 currentTime={time} 
                 onTimeChange={setTime} 
               />
-              <MainContent day={day} time={time} />
+              <MainContent 
+                day={day} 
+                time={time} 
+                currentUser={currentUser} 
+                openLogin={openLogin}  // pass callback
+              />
             </div>
           } />
           <Route path="/prices" element={<Prices />} />
