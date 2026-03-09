@@ -55,7 +55,7 @@ function App() {
                 day={day} 
                 time={time} 
                 currentUser={currentUser} 
-                openLogin={openLogin}  // pass callback
+                openLogin={openLogin}
               />
             </div>
           } />

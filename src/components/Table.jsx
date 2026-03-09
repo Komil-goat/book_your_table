@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Table({ tableId, tableInfo, state, onTableClick }) {
+function Table({ tableId, tableInfo, state, onTableClick, currentUser }) {
     const { position, size, number, image } = tableInfo;
 
     const tableStyle = {
@@ -13,21 +13,26 @@ function Table({ tableId, tableInfo, state, onTableClick }) {
     };
 
     const handleClick = () => {
-        if (state !== 'occupied') {
+        if (state.state !== 'occupied') {
             onTableClick(tableId, tableInfo);
         }
     };
 
+    let stateStr = 'available';
+    if (state.state === 'booked') {
+        stateStr = (currentUser && state.userId === currentUser.id) ? 'booked' : 'occupied';
+    } else if (state.state === 'occupied') {
+        stateStr = 'occupied';
+    }
+
     return (
         <div
-            className={`table table-${state}`}
+            className={`table table-${stateStr}`}
             style={tableStyle}
             onClick={handleClick}
-            title={`Table ${number} - ${state}`}
+            title={`Table ${number} - ${stateStr}`}
         >
-            <img src={`src/images/${image}-${state}.png`}
-                alt={`Table ${number}`}
-            />
+            <img src={`src/images/${image}-${stateStr}.png`} alt={`Table ${number}`} />
             <span className="table-number">{number}</span>
         </div>
     );

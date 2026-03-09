@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RoomLayout from './RoomLayout';
 import TablePopupHandler from './TablePopupHandler.jsx';
 import TABLES from '../data/tables.json';
@@ -6,20 +6,26 @@ import './MainContent.css';
 import './BookingPopup.css';
 
 function MainContent(props) {
-  const initializeBookings = () => {
-    const slot = `${props.day}_${props.time}`;
+  const createEmptySlot = () => {
     const tablesObj = {};
-
     Object.keys(TABLES).forEach(tableId => {
-      tablesObj[tableId] = 'available';
+      tablesObj[tableId] = { state: 'available', userId: null };
     });
-
-    return {
-      [slot]: tablesObj
-    };
+    return tablesObj;
   };
 
-  const [bookings, setBookings] = useState(initializeBookings());
+  const slotKey = `${props.day}_${props.time}`;
+  const [bookings, setBookings] = useState({ [slotKey]: createEmptySlot() });
+
+  useEffect(() => {
+    const newSlotKey = `${props.day}_${props.time}`;
+    setBookings(prev => {
+      if (!prev[newSlotKey]) {
+        return { ...prev, [newSlotKey]: createEmptySlot() };
+      }
+      return prev;
+    });
+  }, [props.day, props.time]);
 
   return (
     <div style={{ marginTop: '30px', padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
@@ -44,6 +50,7 @@ function MainContent(props) {
               bookings={bookings}
               onTableClick={handleTableClick}
               clickedTableId={clickedTableId}
+              currentUser={props.currentUser}
             />
           )}
         </TablePopupHandler>
