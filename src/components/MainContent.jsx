@@ -15,11 +15,10 @@ function MainContent(props) {
   };
 
   const slotKey = `${props.day}_${props.time}`;
-  const [bookings, setBookings] = useState({ [slotKey]: createEmptySlot() });
 
   useEffect(() => {
     const newSlotKey = `${props.day}_${props.time}`;
-    setBookings(prev => {
+    props.setBookings(prev => {
       if (!prev[newSlotKey]) {
         return { ...prev, [newSlotKey]: createEmptySlot() };
       }
@@ -38,8 +37,8 @@ function MainContent(props) {
         <TablePopupHandler
           day={props.day}
           time={props.time}
-          bookings={bookings}
-          setBookings={setBookings}
+          bookings={props.bookings}
+          setBookings={props.setBookings}
           currentUser={props.currentUser}
           onRequireLogin={props.openLogin}
         >
@@ -47,7 +46,7 @@ function MainContent(props) {
             <RoomLayout
               day={props.day}
               time={props.time}
-              bookings={bookings}
+              bookings={props.bookings}
               onTableClick={handleTableClick}
               clickedTableId={clickedTableId}
               currentUser={props.currentUser}

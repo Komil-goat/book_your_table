@@ -5,6 +5,7 @@ import Filters from './components/Filters.jsx';
 import MainContent from './components/MainContent.jsx';
 import Prices from './components/Prices.jsx';
 import Auth from "./components/Auth.jsx";
+import MyBookings from './components/MyBookings.jsx';
 import "./components/Modal.css";
 import "./components/Navbar.css";
 
@@ -14,6 +15,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
   const [auth, setAuth] = useState(null); 
+  const [bookings, setBookings] = useState({});
   
   const openLogin = () => setAuth("login");
   const openSignup = () => setAuth("signup");
@@ -56,10 +58,19 @@ function App() {
                 time={time} 
                 currentUser={currentUser} 
                 openLogin={openLogin}
+                bookings={bookings}
+                setBookings={setBookings}
               />
             </div>
           } />
           <Route path="/prices" element={<Prices />} />
+          <Route path="/my-bookings" element={
+            <MyBookings 
+              bookings={bookings} 
+              currentUser={currentUser} 
+              setBookings={setBookings}
+            />
+          } />
         </Routes>
       </main>
 

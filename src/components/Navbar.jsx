@@ -18,6 +18,7 @@ function Navbar({ openLogin, openSignup, currentUser, setCurrentUser }) {
         <h1>Cafe Booking</h1>
         <Link to="/"><button>Home</button></Link>
         <Link to="/prices"><button>Prices</button></Link>
+        <Link to="/my-bookings"><button>My Bookings</button></Link>
       </div>
 
       <div className="nav-right">

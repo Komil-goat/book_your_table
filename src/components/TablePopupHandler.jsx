@@ -10,13 +10,14 @@ function TablePopupHandler({ day, time, bookings, setBookings, children, current
     setClickedTableId(null);
   }, [day, time]);
 
-  const handleTableClick = (tableId, tableInfo) => {
+  const handleTableClick = (tableId) => {
     if (!currentUser) {
       onRequireLogin();
       return;
     }
 
     const slot = `${day}_${time}`;
+    let table = bookings[slot]?.[tableId];
 
     if (!bookings[slot]) {
       const newSlot = {};
@@ -24,10 +25,9 @@ function TablePopupHandler({ day, time, bookings, setBookings, children, current
         newSlot[id] = { state: 'available', userId: null };
       });
       setBookings(prev => ({ ...prev, [slot]: newSlot }));
-      return;
+      
+      table = { state: 'available', userId: null };
     }
-
-    const table = bookings[slot][tableId];
 
     if (table.state === 'occupied') return;
 
@@ -44,6 +44,7 @@ function TablePopupHandler({ day, time, bookings, setBookings, children, current
 
     setClickedTableId(tableId);
   };
+   
 
   const handleConfirm = () => {
     if (!clickedTableId) return;
