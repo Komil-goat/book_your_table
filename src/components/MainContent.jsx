@@ -3,7 +3,7 @@ import RoomLayout from './RoomLayout';
 import TablePopupHandler from './TablePopupHandler.jsx';
 import TABLES from '../data/tables.json';
 import '../styles/MainContent.css';
-import '../styles/BookingPopup.css';
+import '../styles/PopupMessage.css';
 
 function MainContent(props) {
   const createEmptySlot = () => {

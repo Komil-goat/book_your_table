@@ -20,16 +20,14 @@
   text-align: center;
 }
 
-.popup-window h3 {
-  margin: 0 0 8px 0;
+.popup-window h2 {
+  margin: 0 0 16px 0;
   color: #333;
-  font-size: 18px;
 }
 
 .popup-window p {
   margin: 8px 0;
   color: #666;
-  font-size: 14px;
 }
 
 .popup-buttons {
@@ -40,29 +38,19 @@
 }
 
 .popup-buttons button {
-  padding: 10px 24px;
+  padding: 8px 24px;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   font-size: 14px;
-  font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
-.popup-buttons button:first-child {
-  background: darkolivegreen;
+.cancel-btn {
+  background: #6c757d;
+  color: rgb(0, 0, 0);
+}
+
+.confirm-btn {
+  background: #007bff;
   color: white;
-}
-
-.popup-buttons button:first-child:hover {
-  background: #429654;
-}
-
-.popup-buttons button:last-child {
-  background: darkred;
-  color: white;
-}
-
-.popup-buttons button:last-child:hover {
-  background: #c82333;
 }

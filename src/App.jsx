@@ -8,6 +8,7 @@ import Auth from "./components/Auth.jsx";
 import MyBookings from './components/MyBookings.jsx';
 import Unavailable from './components/Unavailable.jsx';
 import "./styles/Modal.css";
+import "./styles/PopupMessage.css";
 import "./styles/Navbar.css";
 
 function App() {
