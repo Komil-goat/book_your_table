@@ -1,7 +1,7 @@
 import React from "react";
 
 function Unavailable({ currentUser, bookings }) {
-    if (!currentUser) return <p style={{ padding: '20px' }}>Please log in to see the unavailable slots.</p>;
+    if (!currentUser) return <p className="section-empty">Please log in to see the unavailable slots.</p>;
     const userReservations = [];
     Object.entries(bookings).forEach(([slot, tables]) => {
         Object.entries(tables).forEach(([tableId, tableInfo]) => {
@@ -21,12 +21,12 @@ function Unavailable({ currentUser, bookings }) {
         });
     });
     return (
-        <div style={{ padding: '20px' }}>
-            <h2>Unavailable Slots</h2>
+        <div className="section-div">
+            <h2 className="section-heading">Unavailable Slots</h2>
             {userReservations.length === 0 ? (
-                <p>No unavailable slots found.</p>
+                <p className="section-empty">No unavailable slots found.</p>
             ) : (
-                <ul>
+                <ul className="booking-list unordered-list">
                     {userReservations.map((reservation) => (
                         <li key={reservation.id}>
                             {reservation.day} at {reservation.time} -  {reservation.tableId}
