@@ -10,6 +10,7 @@ import Unavailable from './components/Unavailable.jsx';
 import "./styles/Modal.css";
 import "./styles/PopupMessage.css";
 import "./styles/Navbar.css";
+import "./styles/Sections.css";
 
 function App() {
   const [day, setDay] = useState(new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' }));

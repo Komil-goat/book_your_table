@@ -1,0 +1,68 @@
+.section-div {
+  padding: 20px;
+  font-family: 'Arial';
+  color: #484545;
+}
+
+.section-heading {
+  color: black;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.unordered-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.booking-list > div, .booking-list > li {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #726e6e80;
+  padding: 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.booking-list > div:hover, .booking-list > li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.booking-list p {
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+.booking-list button {
+  margin-top: 10px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.booking-list button:hover {
+  background-color: #6c757db0;
+  transform: scale(1.03);
+}
+
+.booking-list button:active {
+  transform: scale(0.97);
+}
+
+.section-empty {
+  padding: 3px;
+  font-size: 20px;
+  color: red;
+}
