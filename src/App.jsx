@@ -24,6 +24,13 @@ function App() {
   const openSignup = () => setAuth("signup");
   const closeAuth = () => setAuth(null);
 
+  const [alertMessage, setAlertMessage] = useState("");
+
+  const showAlert = (msg) => {
+    setAlertMessage(msg);
+    setTimeout(() => setAlertMessage(""), 3000);
+  };
+
   return (
     <>
       <div>
@@ -41,7 +48,13 @@ function App() {
           users={users}
           setUsers={setUsers}
           setCurrentUser={setCurrentUser}
+          onSuccess={showAlert}
         />
+        {alertMessage && (
+          <div className="alert-popup">
+            {alertMessage}
+          </div>
+        )}
       </div>
 
       
