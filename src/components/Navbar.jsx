@@ -1,6 +1,6 @@
 import { Link } from "react-router"; 
 import React, { useState } from "react";
-import ConfirmationModal from "./ConfirmationModal.jsx";
+import PopupMessage from "./PopupMessage.jsx";
 
 function Navbar({ openLogin, openSignup, currentUser, setCurrentUser }) {
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
@@ -36,8 +36,9 @@ function Navbar({ openLogin, openSignup, currentUser, setCurrentUser }) {
         )}
       </div>
       
-      <ConfirmationModal
+      <PopupMessage
         show={showLogoutConfirm}
+        type="confirm"
         message="Are you sure you want to log out?"
         onConfirm={handleConfirmLogout}
         onCancel={handleCancelLogout}

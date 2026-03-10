@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import BookingPopup from './BookingPopup.jsx';
+import PopupMessage from './PopupMessage.jsx';
 import TABLES from '../data/tables.json';
 
 function TablePopupHandler({ day, time, bookings, setBookings, children, currentUser, onRequireLogin }) {
@@ -81,7 +81,9 @@ function TablePopupHandler({ day, time, bookings, setBookings, children, current
       {children({ handleTableClick, clickedTableId })}
 
       {clickedTableId && (
-        <BookingPopup
+        <PopupMessage
+          show={true}
+          type="booking"
           message={popupMessage}
           day={day}
           time={time}
