@@ -19,6 +19,7 @@ function Navbar({ openLogin, openSignup, currentUser, setCurrentUser }) {
         <Link to="/"><button>Home</button></Link>
         <Link to="/prices"><button>Prices</button></Link>
         <Link to="/my-bookings"><button>My Bookings</button></Link>
+        <Link to="/unavailable"><button>Unavailable Slots</button></Link>
       </div>
 
       <div className="nav-right">

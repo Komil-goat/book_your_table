@@ -50,16 +50,16 @@
 }
 
 .popup-buttons button:first-child {
-  background: #28a745;
+  background: darkolivegreen;
   color: white;
 }
 
 .popup-buttons button:first-child:hover {
-  background: #218838;
+  background: #429654;
 }
 
 .popup-buttons button:last-child {
-  background: #dc3545;
+  background: darkred;
   color: white;
 }
 

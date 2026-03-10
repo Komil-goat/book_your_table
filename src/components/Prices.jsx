@@ -11,7 +11,7 @@ const tables = [
 
 function Prices() {
   return (
-    <div style={{ padding: 20, width: "80%", fontFamily: "Arial", border: "1px solid #ddd", borderRadius: 8 }}>
+    <div style={{ padding: 20, width: "95%", fontFamily: "Arial", border: "1px solid #ddd", borderRadius: 8 }}>
       <h1>Price List</h1>
 
       {tables.map((table, idx) => (

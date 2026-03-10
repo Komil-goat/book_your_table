@@ -6,6 +6,7 @@ import MainContent from './components/MainContent.jsx';
 import Prices from './components/Prices.jsx';
 import Auth from "./components/Auth.jsx";
 import MyBookings from './components/MyBookings.jsx';
+import Unavailable from './components/Unavailable.jsx';
 import "./components/Modal.css";
 import "./components/Navbar.css";
 
@@ -71,6 +72,13 @@ function App() {
               setBookings={setBookings}
             />
           } />
+          <Route path="/unavailable" element={
+            <Unavailable
+              bookings={bookings}
+              currentUser={currentUser}
+            />
+          }>
+          </Route>
         </Routes>
       </main>
 
