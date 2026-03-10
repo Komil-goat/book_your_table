@@ -9,6 +9,7 @@
 }
 
 .modal-window {
+  position: relative;
   background: white;
   width: 340px;
   padding: 30px;
@@ -67,6 +68,34 @@
 
 .confirm-btn:hover {
   background: rgb(0, 144, 136);
+}
+
+.alert-popup {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  text-align: center;
+  background: white;
+  color: black;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  animation: fadein 0.3s ease;
+  z-index: 2000;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    top: 0px;
+  }
+  to {
+    opacity: 1;
+    top: 10px;
+  }
 }
 
 @keyframes popup {

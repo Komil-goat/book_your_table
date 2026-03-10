@@ -1,7 +1,15 @@
 import { useState } from "react";
 
-function Auth({ show, mode, onClose, users, setUsers, setCurrentUser }) {
+function Auth({ show, mode, onClose, users, setUsers, setCurrentUser, onSuccess }) {
   const [form, setForm] = useState({ name: "", phone: "" });
+  const [alertMessage, setAlertMessage] = useState ("");
+
+  const showPopup = (msg) => {
+    setAlertMessage(msg);
+    setTimeout(() => {
+      setAlertMessage("");
+    }, 3000);
+  }
 
   if (!show) return null;
 
@@ -12,7 +20,7 @@ function Auth({ show, mode, onClose, users, setUsers, setCurrentUser }) {
     e.preventDefault();
 
     if (!form.name || !form.phone) {
-      alert("Fill all fields");
+      showPopup("Fill all fields");
       return;
     }
 
@@ -25,7 +33,7 @@ function Auth({ show, mode, onClose, users, setUsers, setCurrentUser }) {
         setCurrentUser(user);
         onClose();
       } else {
-        alert("User not found. You have to sign up.");
+        showPopup("User not found. You have to sign up.");
       }
     } else {
       const exists = users.some(
@@ -33,7 +41,7 @@ function Auth({ show, mode, onClose, users, setUsers, setCurrentUser }) {
       );
 
       if (exists) {
-        alert("User already exists");
+        showPopup("User already exists");
         return;
       }
 
@@ -45,57 +53,64 @@ function Auth({ show, mode, onClose, users, setUsers, setCurrentUser }) {
 
       setUsers([...users, newUser]);
       setCurrentUser(newUser);
-      alert("Account created!");
       onClose();
+      onSuccess("Account created!");
     }
 
     setForm({ name: "", phone: "" });
   };
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div
-        className="modal-window"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <h2>{mode === "login" ? "Log In" : "Sign Up"}</h2>
+    <>
+      <div className="modal-overlay" onClick={onClose}>
+        <div
+          className="modal-window"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <h2>{mode === "login" ? "Log In" : "Sign Up"}</h2>
 
-        <form className="modal-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={form.name}
-            onChange={handleChange}
-          />
+          <form className="modal-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={form.name}
+              onChange={handleChange}
+            />
 
-          <input
-            type="text"
-            name="phone"
-            placeholder="Phone"
-            value={form.phone}
-            onChange={handleChange}
-          />
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone"
+              value={form.phone}
+              onChange={handleChange}
+            />
 
-          <div className="modal-buttons">
-            <button
-              type="button"
-              className="cancel-btn"
-              onClick={onClose}
-            >
-              Cancel
-            </button>
+            <div className="modal-buttons">
+              <button
+                type="button"
+                className="cancel-btn"
+                onClick={onClose}
+              >
+                Cancel
+              </button>
 
-            <button
-              type="submit"
-              className="confirm-btn"
-            >
-              {mode === "login" ? "Log In" : "Sign Up"}
-            </button>
-          </div>
-        </form>
+              <button
+                type="submit"
+                className="confirm-btn"
+              >
+                {mode === "login" ? "Log In" : "Sign Up"}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+      {alertMessage && (
+        <div className="alert-popup">
+          {alertMessage}
+        </div>
+      )}
+    </>
   );
 }
 
