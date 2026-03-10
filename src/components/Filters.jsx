@@ -3,7 +3,7 @@ import React from 'react';
 function Filters(props) {
   const days = [0, 1, 2, 3, 4].map((offset) => {
     const date = new Date();
-    date.setDate(date.getDate() + offset);
+    date.setDate(date.getDate()+1 + offset);
     return date.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
   });
 

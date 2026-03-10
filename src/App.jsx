@@ -13,7 +13,14 @@ import "./styles/Navbar.css";
 import "./styles/Sections.css";
 
 function App() {
-  const [day, setDay] = useState(new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' }));
+  const date = new Date();
+  date.setDate(date.getDate() + 1);
+  const formattedDate = date.toLocaleDateString('en-US', { 
+    weekday: 'long', 
+    month: 'short', 
+    day: 'numeric' 
+  });
+  const [day, setDay] = useState(formattedDate);
   const [time, setTime] = useState('Morning');
   const [users, setUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
@@ -62,7 +69,7 @@ function App() {
         <Routes>
           <Route path="/" element={
             <div style={{ margin: '0 auto', fontFamily: 'Arial', alignItems: 'center', padding: '20px' }}>
-              <h1>Project Dashboard</h1>
+              <h1>Reserve your table!</h1>
               <Filters 
                 currentDay={day} 
                 onDayChange={setDay} 
