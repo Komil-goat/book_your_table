@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import RoomLayout from './RoomLayout';
 import TablePopupHandler from './TablePopupHandler.jsx';
 import TABLES from '../data/tables.json';
-import './MainContent.css';
-import './BookingPopup.css';
+import '../styles/MainContent.css';
+import '../styles/BookingPopup.css';
 
 function MainContent(props) {
   const createEmptySlot = () => {

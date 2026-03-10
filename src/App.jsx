@@ -7,8 +7,8 @@ import Prices from './components/Prices.jsx';
 import Auth from "./components/Auth.jsx";
 import MyBookings from './components/MyBookings.jsx';
 import Unavailable from './components/Unavailable.jsx';
-import "./components/Modal.css";
-import "./components/Navbar.css";
+import "./styles/Modal.css";
+import "./styles/Navbar.css";
 
 function App() {
   const [day, setDay] = useState(new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' }));

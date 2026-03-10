@@ -61,12 +61,12 @@
 }
 
 .confirm-btn {
-  background: #4caf50;
+  background: lightseagreen;
   color: white;
 }
 
 .confirm-btn:hover {
-  background: #43a047;
+  background: rgb(0, 144, 136);
 }
 
 @keyframes popup {
