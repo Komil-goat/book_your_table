@@ -17,18 +17,26 @@ This is a frontend-only web application built with React and Vite. The website a
 
 1. Clone the repository:
 
+```bash
 git clone https://github.com/NUU-SE201/bug-writers.git
+```
 
 2. Navigate to the project folder:
 
+```bash
 cd bug-writers
+```
 
 3. Install dependencies:
 
+```bash
 npm install
+```
 
 4. Run the project locally:
 
+```bash
 npm run dev
+```
 
 5. Open your browser and go to the URL shown in the terminal (usually http://localhost:5173).
