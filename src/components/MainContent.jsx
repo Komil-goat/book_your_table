@@ -14,8 +14,6 @@ function MainContent(props) {
     return tablesObj;
   };
 
-  const slotKey = `${props.day}_${props.time}`;
-
   useEffect(() => {
     const newSlotKey = `${props.day}_${props.time}`;
     props.setBookings(prev => {
