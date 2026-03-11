@@ -1,7 +1,7 @@
 
 # Café Website
 
-This is a frontend-only web application built with React and Vite. The website allows users to view table layouts, check availability, and reserve tables at a cafe.
+This is a frontend-only web application built with React. The website allows users to view table layouts, check availability, and reserve tables at a cafe.
 
 ### Features
 
